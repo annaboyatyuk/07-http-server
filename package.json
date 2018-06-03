@@ -1,0 +1,27 @@
+{
+  "name": "07-http-server",
+  "version": "1.0.0",
+  "description": "![cf](https://i.imgur.com/7v5ASc8.png) Lab 07: Vanilla HTTP Server ======",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage --verbose",
+    "lint": "eslint **/*.js",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annaboyatyuk/07-http-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annaboyatyuk/07-http-server/issues"
+  },
+  "homepage": "https://github.com/annaboyatyuk/07-http-server#readme",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "eslint": "^4.19.1",
+    "jest": "^23.1.0"
+  }
+}
