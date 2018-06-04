@@ -6,15 +6,16 @@
 * Work in a branch on your fork
 * Create a PR to your master from your working branch.
 * Ensure that your repository/branch is connected to travis-ci.com
-* Ensure that your repository/branch is connected to a dyno at heroku.com 
-	* **Note**: Will discuss in Saturday lab
-* Heroku and Travis should pick you up and deploy
+* Optional Ensure that your repository/branch is connected to a dyno at heroku.com 
+* Travis (and optionally Heroku) should pick you up and deploy
 * Submit on canvas:
   * a question and observation
   * how long you spent
   * link to your pull request
   * link to your build at travis-ci URL
-  * Heroku Server URL
+  * Heroku Server URL (optional)
+
+
 
 ## Configuration 
 Configure the root of your repository with the following files and directories. Thoughfully name and organize any aditional configuration or module files.
