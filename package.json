@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/annaboyatyuk/07-http-server#readme",
   "dependencies": {
+    "cowsay": "^1.3.0",
     "dotenv": "^6.0.0",
     "eslint": "^4.19.1",
-    "jest": "^23.1.0"
+    "jest": "^23.1.0",
+    "superagent": "^3.8.3"
   }
 }
