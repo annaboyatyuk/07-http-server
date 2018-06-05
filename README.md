@@ -9,7 +9,7 @@
 ## links
 
 - pr https://github.com/annaboyatyuk/07-http-server/pull/1
-- travis 
+- travis https://travis-ci.com/annaboyatyuk/07-http-server
 
 ## Configure
 
