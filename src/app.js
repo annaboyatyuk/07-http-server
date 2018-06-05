@@ -11,10 +11,6 @@ const parser = require('./lib/parser.js');
 
 const requestHandler = (req,res) => {
 
-  // console.log('aaaaaa', req.method);
-  // console.log('bbbbbb', req.headers);
-  // console.log('ccccc', req.url);
-
   parser(req)
     .then(req => {
 
@@ -27,7 +23,7 @@ const requestHandler = (req,res) => {
           res.setHeader('Content-Type', 'text/html');
           res.statusCode = 200;
           res.statusMessage = 'OK';
-          res.write(data.toString());
+          res.write(data.toString().replace('{{cowsay}}', cowsay.say({text: 'What does the cow say?'})));
           res.end();
           return;
         });
@@ -39,13 +35,20 @@ const requestHandler = (req,res) => {
           if(err) {
             throw err;
           }
-          let text = data.toString();
+          let texts = data.toString();
           res.setHeader('Content-Type', 'text/html');
           res.statusCode = 200;
           res.statusMessage = 'OK';
-          res.write(text.replace('{{cowsay}}', cowsay.say({text: req.url.query.text})));
-          res.end();
-          return;
+          if(!req.url.query.text) {
+            res.write(texts.replace('{{cowsay}}', cowsay.say({text: 'What does the cow say?'})));
+            res.end();
+            return;
+          }
+          else {
+            res.write(texts.replace('{{cowsay}}', cowsay.say({text: req.url.query.text})));
+            res.end();
+            return;
+          }
         });
       }
 
@@ -82,7 +85,7 @@ const requestHandler = (req,res) => {
         res.setHeader('Content-Type', 'text/html');
         res.statusCode = 404;
         res.statusMessage = 'Not Found';
-        res.write('Error 404 Not Found');
+        res.write('invalid request: text query required');
         res.end();
       }
     
@@ -100,3 +103,4 @@ module.exports = {
   start: (port,callback) => app.listen(port,callback),
   stop: (callback) => app.close(callback),
 };
+

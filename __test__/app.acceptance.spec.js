@@ -44,7 +44,7 @@ describe('Simple Web Server', () => {
   });
 
   it('handles a good post request', () => {
-    let obj = {name:'Fred'};
+    let obj = {'content': '<cowsay cow text>'};
     let expected = JSON.stringify(obj);
     return superagent.post('http://localhost:3001/data')
       .send(obj)
