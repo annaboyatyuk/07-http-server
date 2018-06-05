@@ -17,3 +17,7 @@
 - open localhost in webpage for whichever port you're on
 - type /cowsay?text=and type what you want the cow to say here
 
+#### credits 
+
+- the tests are from the demo code and i havent adjusted them to match my code, so travis is failing
+- also i got a lot of help from the demo code for this
