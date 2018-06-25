@@ -16,7 +16,7 @@ describe('Simple Web Server', () => {
   it('handles an invalid get request with a 404', () => {
 
     return superagent.get('http://localhost:3000/foo')
-      .then(response => true)
+      .then(true)
       .catch(response => expect(response.status).toEqual(404));
 
   });
@@ -41,17 +41,6 @@ describe('Simple Web Server', () => {
       })
       .catch(console.err);
 
-  });
-
-  it('handles a good post request', () => {
-    let obj = {'content': '<cowsay cow text>'};
-    let expected = JSON.stringify(obj);
-    return superagent.post('http://localhost:3001/data')
-      .send(obj)
-      .then(response => {
-        expect(response.text).toEqual(expected);
-      })
-      .catch(console.err);
   });
 
 });

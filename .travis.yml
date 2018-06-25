@@ -1,8 +1,8 @@
-# language: node_js
-# node_js:
-#   - "9"
+language: node_js
+node_js:
+  - "9"
 
-# script:
-#   - npm run lint
-#   - npm test
+script:
+  - npm run lint
+  - npm test
   
