@@ -64,10 +64,12 @@ const requestHandler = (req,res) => {
             content = 'Invalid request:';
           }
           else if(!req.body.text) {
+            res.statusCode = 400;
+            res.write(JSON.stringify({error: 'invalid request: text query required'}));
             content = 'Invalid content: text query required';
           }
           else { 
-            content = cowsay.say({text: req.url.query.text, e: 'oO'});
+            content = cowsay.say({text: req.body.text});
           }
           let text = data.toString();
           let obj = {content: content};

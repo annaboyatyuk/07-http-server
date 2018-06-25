@@ -43,16 +43,5 @@ describe('Simple Web Server', () => {
 
   });
 
-  it('handles a good post request', () => {
-    let obj = {'content': '<cowsay cow text>'};
-    let expected = JSON.stringify(obj);
-    return superagent.post('http://localhost:3001/data')
-      .send(obj)
-      .then(response => {
-        expect(response.text).toEqual(expected);
-      })
-      .catch(console.err);
-  });
-
 });
 
